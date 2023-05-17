@@ -7,7 +7,15 @@ export default function Home() {
   const [sidebarOpened, setSidebarOpened] = useState(false)
 
   function closeSidebar() {
-    
+    setSidebarOpened(false)
+  }
+
+  function handleClearConversations() {
+
+  }
+
+  function handleNewChat() {
+
   }
 
   return (
@@ -15,12 +23,14 @@ export default function Home() {
       <Sidebar 
         open={sidebarOpened}
         onClose={closeSidebar}
+        onClear={handleClearConversations}
+        onNewChat={handleNewChat}
       >
         
       </Sidebar>
       
       <section className="flex flex-col w-full">
-        ...
+        <button onClick={() => setSidebarOpened(true)}>Abrir Sidebar</button>
       </section>
 
     </main>
